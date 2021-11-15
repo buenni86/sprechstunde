@@ -64,19 +64,9 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"openWebsite",
+                 "name":"zone",
                  "type":"string",
-                 "value":"https:\/\/open.spotify.com\/embed\/playlist\/37i9dQZEVXbMDoHDwVN2tF?utm_source=generator"
-                }, 
-                {
-                 "name":"openWebsiteTrigger",
-                 "type":"string",
-                 "value":"onaction"
-                }, 
-                {
-                 "name":"openWebsiteTriggerMessage",
-                 "type":"string",
-                 "value":"Zum Musik abspielen Leertaste dr\u00fccken"
+                 "value":"musik"
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -293,6 +283,17 @@
                  "width":110,
                  "x":49.3333333333334,
                  "y":732.666666666667
+                }, 
+                {
+                 "height":90,
+                 "id":7,
+                 "name":"popUpMusik",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":194,
+                 "x":108,
+                 "y":146
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -385,7 +386,7 @@
          "y":0
         }],
  "nextlayerid":43,
- "nextobjectid":7,
+ "nextobjectid":8,
  "orientation":"orthogonal",
  "properties":[
         {
