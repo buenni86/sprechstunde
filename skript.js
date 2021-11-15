@@ -2,6 +2,7 @@ var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
 var urlFeedback = "https://forms.office.com/Pages/ResponsePage.aspx?id=nC2noeZJbU-a9lqvoRg7_f26WHDvlOFNi_8Y43fECOdUMDVDTUpUUDRONkxHMzdLQ09WRlQxUUZSMS4u";
 var urlInfo = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure";
+var urlMusik = "https://open.spotify.com/embed/playlist/37i9dQZEVXbMDoHDwVN2tF?utm_source=generator";
 
 function closePopUp(){
     if (currentPopup !== undefined) {
@@ -12,6 +13,7 @@ function closePopUp(){
 
 var zoneFeedback = "feedback";
 var zoneInfo = "info";
+var zoneMusik = "musik";
 
 
 WA.room.onEnterZone(zoneFeedback, () => {
@@ -48,6 +50,28 @@ WA.room.onEnterZone(zoneInfo, () => {
 })
 
 WA.room.onLeaveZone(zoneInfo, () =>{
+    closePopUp();
+
+    if (isCoWebSiteOpened) {
+        WA.nav.closeCoWebSite();
+        isCoWebSiteOpened = false;
+    }
+})
+
+
+WA.room.onEnterZone(zoneMusik, () => {
+   currentPopup =  WA.ui.openPopup("popUpMusik","Ein wenig Musik gefällig?",[
+        {
+            label: "Her damit!",
+			callback: (popup => {
+                WA.nav.openCoWebSite(urlMusik);
+                isCoWebSiteOpened = true;
+                closePopUp();
+            })
+        }]);
+})
+
+WA.room.onLeaveZone(zoneMusik, () =>{
     closePopUp();
 
     if (isCoWebSiteOpened) {
