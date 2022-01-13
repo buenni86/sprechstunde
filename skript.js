@@ -1,8 +1,12 @@
+import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+
+
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
 var urlFeedback = "https://forms.office.com/Pages/ResponsePage.aspx?id=nC2noeZJbU-a9lqvoRg7_f26WHDvlOFNi_8Y43fECOdUMDVDTUpUUDRONkxHMzdLQ09WRlQxUUZSMS4u";
 var urlInfo = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure";
-var urlMusik = "https://open.spotify.com/embed/playlist/37i9dQZEVXbMDoHDwVN2tF?utm_source=generator";
+var urlMusik = "https://www.youtube-nocookie.com/embed/gXrDnYZzsKQ?autoplay=1";
+var urlCafe = "https://www.chefkoch.de/rezepte/1092131215242366/Eiskaffee-Latte-macchiato.html";
 
 function closePopUp(){
     if (currentPopup !== undefined) {
@@ -14,6 +18,7 @@ function closePopUp(){
 var zoneFeedback = "feedback";
 var zoneInfo = "info";
 var zoneMusik = "musik";
+var zoneCafe = "cafe";
 
 
 WA.room.onEnterZone(zoneFeedback, () => {
@@ -64,7 +69,7 @@ WA.room.onEnterZone(zoneMusik, () => {
         {
             label: "Her damit!",
 			callback: (popup => {
-                WA.nav.openCoWebSite(urlMusik);
+                WA.nav.openCoWebSite(urlMusik, false, "autoplay; encrypted-media");
                 isCoWebSiteOpened = true;
                 closePopUp();
             })
@@ -72,6 +77,27 @@ WA.room.onEnterZone(zoneMusik, () => {
 })
 
 WA.room.onLeaveZone(zoneMusik, () =>{
+    closePopUp();
+
+    if (isCoWebSiteOpened) {
+        WA.nav.closeCoWebSite();
+        isCoWebSiteOpened = false;
+    }
+})
+
+WA.room.onEnterZone(zoneCafe, () => {
+   currentPopup =  WA.ui.openPopup("popUpCafe","Leider,\ndo it yourself",[
+        {
+            label: "Empfehlung",
+            callback: (popup => {
+                WA.nav.openTab(urlCafe);
+                isCoWebSiteOpened = true;
+                closePopUp();
+            })
+        }]);
+})
+
+WA.room.onLeaveZone(zoneCafe, () =>{
     closePopUp();
 
     if (isCoWebSiteOpened) {
