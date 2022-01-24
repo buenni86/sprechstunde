@@ -5,7 +5,7 @@ var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
 var urlFeedback = "https://forms.office.com/Pages/ResponsePage.aspx?id=nC2noeZJbU-a9lqvoRg7_f26WHDvlOFNi_8Y43fECOdUMDVDTUpUUDRONkxHMzdLQ09WRlQxUUZSMS4u";
 var urlInfo = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure";
-var urlMusik = "https://www.youtube-nocookie.com/embed/gXrDnYZzsKQ?autoplay=1";
+var urlMusik = "https://www.youtube-nocookie.com/embed/36YnV9STBqc?autoplay=1";
 var urlCafe = "https://www.chefkoch.de/rezepte/1092131215242366/Eiskaffee-Latte-macchiato.html";
 
 function closePopUp(){
