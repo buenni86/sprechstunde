@@ -7,6 +7,7 @@ var urlFeedback = "https://forms.office.com/Pages/ResponsePage.aspx?id=nC2noeZJb
 var urlInfo = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure";
 var urlMusik = "https://www.youtube-nocookie.com/embed/36YnV9STBqc?autoplay=1";
 var urlCafe = "https://www.chefkoch.de/rezepte/1092131215242366/Eiskaffee-Latte-macchiato.html";
+var Mail = "mailto:DB.Systel.CommunicationServices.EVS@deutschebahn.com";
 
 function closePopUp(){
     if (currentPopup !== undefined) {
@@ -17,6 +18,7 @@ function closePopUp(){
 
 var zoneFeedback = "feedback";
 var zoneInfo = "info";
+var zoneInfoDoor = "infoDoor";
 var zoneMusik = "musik";
 var zoneCafe = "cafe";
 
@@ -61,6 +63,23 @@ WA.room.onLeaveZone(zoneInfo, () =>{
         WA.nav.closeCoWebSite();
         isCoWebSiteOpened = false;
     }
+})
+
+WA.room.onEnterZone(zoneInfoDoor, () => {
+   currentPopup =  WA.ui.openPopup("popUpInfoDoor","Falls die Tür verschlossen ist, am besten einen Termin mit uns vereinbaren\n📧 Team EVS 📧",[
+        {
+            label: "E-Mail",
+			className:"primary",
+			callback: (popup => {
+                WA.nav.openTab(Mail);
+                isCoWebSiteOpened = true;
+                closePopUp();
+            })
+        }]);
+})
+
+WA.room.onLeaveZone(zoneInfoDoor, () =>{
+    closePopUp();
 })
 
 
