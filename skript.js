@@ -88,7 +88,7 @@ WA.room.onEnterZone(zoneMusik, () => {
         {
             label: "Her damit!",
 			callback: (popup => {
-                WA.nav.openCoWebSite(urlMusik, false, "autoplay; encrypted-media");
+                WA.nav.openCoWebSite(urlMusik, false, "autoplay; fullscreen; encrypted-media");
                 isCoWebSiteOpened = true;
                 closePopUp();
             })
