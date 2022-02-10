@@ -480,6 +480,30 @@
                  "width":353.5,
                  "x":77.5,
                  "y":626
+                }, 
+                {
+                 "height":11.296875,
+                 "id":11,
+                 "name":"info",
+                 "properties":[
+                        {
+                         "name":"font-family",
+                         "type":"string",
+                         "value":"\"Press Start 2P\""
+                        }],
+                 "rotation":0,
+                 "text":
+                    {
+                     "fontfamily":"Press Start 2P",
+                     "pixelsize":8,
+                     "text":"Info",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":33.3645833333333,
+                 "x":287.651041666667,
+                 "y":835.3515625
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -572,7 +596,7 @@
          "y":0
         }],
  "nextlayerid":52,
- "nextobjectid":11,
+ "nextobjectid":12,
  "orientation":"orthogonal",
  "properties":[
         {
