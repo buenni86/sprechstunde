@@ -482,11 +482,6 @@
                  "name":"doorVariable",
                  "type":"string",
                  "value":"door"
-                }, 
-                {
-                 "name":"tag",
-                 "type":"string",
-                 "value":"admin"
                 }],
          "type":"tilelayer",
          "visible":true,
